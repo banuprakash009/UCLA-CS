@@ -6,8 +6,8 @@
 #include <vector>
 
 double sigma(const std::vector<int> &scores);
-//Calculates mean for standard deviation and returns
-//standard deviation
+//Calculates mean for standard deviation as well as
+//standard deviation. Returns standard deviation
 
 int main()
 {
