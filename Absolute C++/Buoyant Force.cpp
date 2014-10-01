@@ -7,7 +7,7 @@ to F_b = V * GAMMA, where V is the volume and GAMMA the specific weight of the f
 
 int main()
 {
-	const double GAMMA = 62.4, PI = 3.141569;
+	const double GAMMA = 62.4, PI = 3.1415;
 	double weight, radius;
 
 	std::cout << "Enter weight of sphere in lbs: ";
