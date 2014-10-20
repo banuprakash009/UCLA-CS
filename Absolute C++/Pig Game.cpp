@@ -35,7 +35,7 @@ int main()
 		computerTurn(compTotalScore);
 
 		std::cout << "You have " << humanTotalScore << " and the comp has "
-				  << compTotalScore << ".\n";
+			  << compTotalScore << ".\n";
 	}
 
 	if (humanTotalScore >= 100)
@@ -63,7 +63,7 @@ int humanTurn(int &humTotalScore)
 		{
 			score += roll;
 			std::cout << "You rolled a " << roll
-					  << ". Would you like to roll again? (r/h) ";
+				  << ". Would you like to roll again? (r/h) ";
 			std::cin >> response;
 			if (response == "h")
 			{
