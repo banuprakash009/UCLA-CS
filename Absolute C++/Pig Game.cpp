@@ -1,7 +1,7 @@
 /*This is an assignment from the book Absolute C++. This program is designed to
 play a game of Pig between a human and computer opponent. Pig is a dice game in
 which the first player to roll 100 points wins. On each turn a player rolls a
-dice. If they roll a 2-6 they may choose to roll again or hold. If they choose
+die. If they roll a 2-6 they may choose to roll again or hold. If they choose
 to hold, the sum of all rolls for the turn are added to thier total score. If
 they roll a 1, all points for the turn are forfeit and it becomes the opponent's
 turn. The assignment asks for the logic of the turns to be handled inside the
