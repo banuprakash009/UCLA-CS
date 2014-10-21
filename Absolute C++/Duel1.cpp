@@ -24,13 +24,13 @@ a shooter hits his target.*/
 #include <string>
 
 void aaronShoots(bool& target, std::string& name);
-//Randomly return 0,1, or 2. If !=1, missed shot.
+//Randomly choose between 0,1, or 2. If !=1, missed shot.
 
 void bobShoots(bool& target, std::string& name);
-//Randomly return 0 or 1. If ==0, missed shot.
+//Randomly choose between 0 or 1. If ==0, missed shot.
 
 void charlieShoots(bool& target, std::string& name);
-//Return 1 since Charlie is Deadshot.
+//Charlie is Deadshot.
 
 int main()
 {
