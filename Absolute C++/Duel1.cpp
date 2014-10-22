@@ -1,3 +1,4 @@
+
 /*The following is an exercise from Absolute C++.
 
 In the land of Puzzlevania, Aaron, Bob, and Charlie had an argument over which
@@ -21,23 +22,21 @@ a shooter hits his target.*/
 
 #include <iostream>
 #include <ctime>
-#include <string>
 
-void aaronShoots(bool& target, std::string& name);
+void aaronShoots(bool& target);
 //Randomly choose between 0,1, or 2. If !=1, missed shot.
 
-void bobShoots(bool& target, std::string& name);
+void bobShoots(bool& target);
 //Randomly choose between 0 or 1. If ==0, missed shot.
 
-void charlieShoots(bool& target, std::string& name);
+void charlieShoots(bool& target);
 //Charlie is Deadshot.
 
 int main()
 {
 	srand((int)time(0));
 
-	int shot = 0, aaronWin = 0, bobWin = 0, charlieWin = 0;
-	std::string aaron = "Aaron", bob = "Bob", charlie = "Charlie";
+	int aaronWin = 0, bobWin = 0, charlieWin = 0;
 
 	for (int i = 0; i < 10000; i++)
 	{
@@ -47,7 +46,7 @@ int main()
 		{
 			if (charlieAlive)//Aaron always targets Charlie if he is alive
 			{
-				aaronShoots(charlieAlive, charlie);
+				aaronShoots(charlieAlive);
 				if (!(bobAlive || charlieAlive))
 				{
 					aaronWin++;
@@ -56,7 +55,7 @@ int main()
 
 			else//Aaron targets Bob if Charlie is dead
 			{
-				aaronShoots(bobAlive, bob);
+				aaronShoots(bobAlive);
 				if (!(bobAlive || charlieAlive))
 				{
 					aaronWin++;
@@ -65,10 +64,10 @@ int main()
 
 			if (bobAlive && charlieAlive)
 			{
-				bobShoots(charlieAlive, charlie);//Bob always targets Charlie if he is alive
+				bobShoots(charlieAlive);//Bob always targets Charlie if he is alive
 				if (charlieAlive)
 				{
-					charlieShoots(bobAlive, bob);//Charlie targets Bob since he has better aim than Aaron
+					charlieShoots(bobAlive);//Charlie targets Bob since he has better aim than Aaron
 				}
 			}
 
@@ -79,13 +78,13 @@ int main()
 
 			else if (!bobAlive && aaronAlive)
 			{
-				charlieShoots(aaronAlive, aaron);
+				charlieShoots(aaronAlive);
 				charlieWin++;
 			}
 
 			else
 			{
-				bobShoots(aaronAlive, aaron);
+				bobShoots(aaronAlive);
 				if (!aaronAlive)
 					bobWin++;
 			}
@@ -99,7 +98,7 @@ int main()
 }
 
 
-void aaronShoots(bool& target, std::string& name)
+void aaronShoots(bool& target)
 {
 	int shot = (rand() % 3);
 	if (shot == 1)
@@ -109,7 +108,7 @@ void aaronShoots(bool& target, std::string& name)
 
 }
 
-void bobShoots(bool& target, std::string& name)
+void bobShoots(bool& target)
 {
 	int shot = (rand() % 2);
 	if (shot == 1)
@@ -118,7 +117,7 @@ void bobShoots(bool& target, std::string& name)
 	}
 }
 
-void charlieShoots(bool& target, std::string& name)
+void charlieShoots(bool& target)
 {
 	target = false;
 }
